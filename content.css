@@ -1,0 +1,921 @@
+/* Shared styles for the JKLM Overlay sidebar. */
+
+:root {
+    --jklm-overlay-sidebar-width: 300px;
+}
+
+body.jklm-overlay-active {
+    overflow-x: hidden;
+}
+
+.root-credit {
+    color: red;
+}
+
+.root-credit {
+    color: red;
+}
+
+.root-discord {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+}
+
+.root-discord-link {
+    color: #2266FF;
+    font: 15px "Varela Round", "sans-serif";
+    text-decoration: none;
+}
+
+.root-discord-link:hover,
+.root-discord-link:focus {
+    text-decoration: underline;
+}
+
+.root-profile-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 10px;
+    padding-bottom: 6px;
+}
+
+.root-profile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.root-profile-avatar {
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #2f855a;
+    cursor: default;
+}
+
+.root-profile-name {
+    color: #1f2937;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.root-profile-status-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #4b5563;
+    font-size: 12px;
+}
+
+.root-profile-status-dot {
+    display: inline-block;
+    font-size: 10px;
+    line-height: 1;
+}
+
+.root-profile-status-dot.online {
+    color: #22c55e;
+}
+
+.root-profile-status-dot.offline {
+    color: #6b7280;
+}
+
+.root-profile-status-label {
+    font-weight: 600;
+}
+
+.root-private-chat-shell {
+    position: relative;
+    display: inline-flex;
+    align-self: stretch;
+    margin-top: 0;
+}
+
+.root-private-chat-shell .privateChat {
+    transition: filter 120ms ease, background-color 120ms ease;
+}
+
+.root-private-chat-shell .privateChat:not(.active):hover,
+.root-private-chat-shell .privateChat.hover:not(.active) {
+    filter: brightness(0.82);
+}
+
+.root-private-chat-shell .privateChat.active:hover,
+.root-private-chat-shell .privateChat.active.hover {
+    filter: none;
+}
+
+.root-private-chat-host {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2147483650;
+}
+
+.root-private-chat-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483651;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 682.5px;
+    max-height: calc(100vh - 90px);
+    padding: 6.4px 0;
+    border: none;
+    border-radius: 0;
+    background: #202020;
+    box-shadow: -2px 0 24px rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    font-family: "Varela Round";
+    font-weight: 400;
+    color: #f5f5f5;
+    overflow: hidden;
+}
+
+.root-private-chat-panel.hidden {
+    display: none;
+}
+
+.root-private-chat-panel {
+    pointer-events: auto;
+}
+
+.root-private-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding: 0 8px;
+    font-size: 12.8px;
+    color: rgb(204, 204, 204);
+    line-height: 1.4;
+}
+
+.root-private-chat-title {
+    font-weight: 700;
+}
+
+.root-private-chat-close,
+.root-private-chat-back,
+.root-private-chat-menu-button,
+.root-private-chat-send {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: pointer;
+    background: #2f855a;
+    color: #fff;
+    font: 14px "Varela Round", sans-serif;
+}
+
+.root-private-chat-close {
+    background: transparent;
+    color: rgb(204, 204, 204);
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px 8px;
+}
+
+.root-private-chat-message {
+    width: 100%;
+    max-width: 100%;
+    padding: 6px 10px;
+    background: transparent;
+    color: rgb(204, 204, 204);
+    line-height: 1.35;
+    align-self: flex-start;
+}
+
+.root-private-chat-message.self {
+    align-self: flex-start;
+    background: transparent;
+}
+
+.root-private-chat-message-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: rgb(180, 180, 180);
+}
+
+.root-private-chat-message-header .time {
+    display: inline-flex;
+    width: 58px;
+    min-width: 58px;
+    height: 17.5px;
+    font-size: 11px;
+    color: rgb(180, 180, 180);
+}
+
+.root-private-chat-avatar,
+.root-private-chat-avatar.service {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.root-private-chat-sender {
+    font-weight: 700;
+    color: rgb(240, 240, 240);
+}
+
+.root-private-chat-message-body {
+    display: flex;
+}
+
+.root-private-chat-message-body .text {
+    color: rgb(230, 230, 230);
+    font-size: 13px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.root-private-chat-input-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 0 8px 8px;
+}
+
+.root-private-chat-textarea {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    background: #141414;
+    color: #f5f5f5;
+    font: 14px "Varela Round", sans-serif;
+    resize: none;
+    box-sizing: border-box;
+    line-height: 1.4;
+    min-height: 80px;
+}
+
+.root-private-chat-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.root-private-chat-close {
+    background: transparent;
+    color: rgb(204, 204, 204);
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px 8px;
+}
+
+.root-private-chat-page-empty {
+    color: rgb(204, 204, 204);
+}
+
+.root-private-chat-close {
+    background: transparent;
+    color: rgb(204, 204, 204);
+    padding: 4px 8px;
+}
+
+.root-private-chat-back {
+    background: #404040;
+}
+
+.root-private-chat-menu {
+    display: grid;
+    gap: 8px;
+    padding: 0 8px;
+}
+
+.root-private-chat-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+    background: #404040;
+    color: rgb(204, 204, 204);
+    text-align: left;
+    position: relative;
+}
+
+.root-private-chat-menu-badge {
+    margin-left: auto;
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 3px 8px;
+    min-width: 18px;
+    text-align: center;
+    display: none;
+}
+
+.root-private-chat-toast {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    z-index: 2147483652;
+    background: rgba(220, 38, 38, 0.95);
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    transition: opacity 160ms ease, transform 160ms ease;
+    pointer-events: none;
+}
+
+.root-private-chat-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.root-private-chat-menu-icon {
+    font-size: 16px;
+}
+
+.root-private-chat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.root-private-chat-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.root-private-chat-user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 2px;
+}
+
+.root-private-chat-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.root-private-chat-section-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.root-private-chat-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.root-private-chat-input {
+    width: 100%;
+}
+
+.root-private-chat-status {
+    margin-top: 4px;
+    padding: 0 8px 8px;
+    font-size: 12.8px;
+    color: rgb(204, 204, 204);
+}
+
+.root-private-chat-menu-help {
+    padding: 0 8px;
+    color: rgb(180, 180, 180);
+    font-size: 12.8px;
+}
+
+.root-private-chat-row:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.root-private-chat-input-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 0 8px 8px;
+}
+
+.root-private-chat-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 3.2px;
+    padding: 6.4px;
+    background: #ffffff;
+    color: rgb(34, 34, 34);
+    font: 16px "Varela Round", sans-serif;
+    box-sizing: border-box;
+}
+
+.root-private-chat-send {
+    border: none;
+    border-radius: 3.2px;
+    padding: 6.4px 10px;
+    background: #26aa36;
+    color: #ffffff;
+    cursor: pointer;
+    font: 16px "Varela Round", sans-serif;
+    box-sizing: border-box;
+}
+
+.root-private-chat-status {
+    margin-top: 4px;
+    padding: 0 8px 8px;
+    font-size: 12.8px;
+    color: rgb(204, 204, 204);
+}
+
+.root-private-chat-menu-help {
+    padding: 0 8px;
+    color: rgb(180, 180, 180);
+    font-size: 12.8px;
+}
+
+.root-private-chat-row:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.root-private-chat-input-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 0 8px 8px;
+}
+
+.root-private-chat-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 3.2px;
+    padding: 6.4px;
+    background: #ffffff;
+    color: rgb(34, 34, 34);
+    font: 16px "Varela Round", sans-serif;
+    box-sizing: border-box;
+}
+
+.root-private-chat-send {
+    border: none;
+    border-radius: 3.2px;
+    padding: 6.4px 10px;
+    background: #26aa36;
+    color: #ffffff;
+    cursor: pointer;
+    font: 16px "Varela Round", sans-serif;
+    box-sizing: border-box;
+}
+
+.root-private-chat-status {
+    margin-top: 4px;
+    padding: 0 8px 8px;
+    font-size: 12.8px;
+    color: rgb(204, 204, 204);
+}
+
+.root-private-chat-menu-help {
+    padding: 0 8px;
+    color: rgb(180, 180, 180);
+    font-size: 12.8px;
+}
+
+.root-private-chat-row:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.root-private-chat-list {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 8px;
+}
+
+.root-private-chat-message {
+    width: 100%;
+    max-width: 100%;
+    padding: 6.4px 8px;
+    border-radius: 0;
+    background: transparent;
+    color: rgb(204, 204, 204);
+    line-height: 1.35;
+    align-self: flex-start;
+}
+
+.root-private-chat-message.self {
+    align-self: flex-start;
+    background: transparent;
+}
+
+.root-private-chat-message-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: rgb(180, 180, 180);
+}
+
+.root-private-chat-message-header .time {
+    display: inline-flex;
+    width: 58px;
+    min-width: 58px;
+    height: 17.5px;
+    font-size: 11px;
+    color: rgb(180, 180, 180);
+}
+
+.root-private-chat-avatar,
+.root-private-chat-avatar.service {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.root-private-chat-message-body {
+    display: flex;
+}
+
+.root-private-chat-message-body .text {
+    color: rgb(230, 230, 230);
+    font-size: 13px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.root-private-chat-input-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 0 8px 8px;
+}
+
+.root-private-chat-textarea {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    background: #141414;
+    color: #f5f5f5;
+    font: 14px "Varela Round", sans-serif;
+    resize: none;
+    box-sizing: border-box;
+    line-height: 1.4;
+    min-height: 80px;
+}
+
+.root-private-chat-status {
+    display: none;
+}
+
+.root-private-chat-empty {
+    color: rgb(204, 204, 204);
+    font-size: 12.8px;
+    padding: 10px 4px;
+}
+
+.root-private-chat-input-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 0 8px 8px;
+}
+
+.root-private-chat-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 3.2px;
+    padding: 6.4px;
+    background: #ffffff;
+    color: rgb(34, 34, 34);
+    font: 16px "Varela Round", sans-serif;
+    box-sizing: border-box;
+}
+
+.root-private-chat-send {
+    border: none;
+    border-radius: 3.2px;
+    padding: 6.4px 10px;
+    background: #26aa36;
+    color: #ffffff;
+    cursor: pointer;
+    font: 16px "Varela Round", sans-serif;
+    box-sizing: border-box;
+}
+
+.root-private-chat-status {
+    margin-top: 4px;
+    padding: 0 8px 8px;
+    font-size: 12.8px;
+    color: rgb(204, 204, 204);
+}
+
+div.tabs a.privateChat,
+div.bar a.privateChat,
+div.tabs a.privatecHAT,
+div.bar a.privatecHAT {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #404040;
+    color: rgb(170, 170, 170);
+    border: none;
+    border-right: 1px solid rgb(51, 51, 51);
+    border-radius: 0;
+    font-size: 13.3333px;
+    line-height: 42.46px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 57.68px;
+    height: 42.46px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+div.tabs a.privateChat:hover,
+div.bar a.privateChat:hover,
+div.tabs a.privateChat:focus,
+div.bar a.privateChat:focus,
+div.tabs a.privatecHAT:hover,
+div.bar a.privatecHAT:hover,
+div.tabs a.privatecHAT:focus,
+div.bar a.privatecHAT:focus {
+    background: #505050;
+    color: rgb(170, 170, 170);
+}
+
+.root-profile-panel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2147483647;
+    padding: 20px;
+}
+
+.root-profile-panel-card {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 18px;
+    width: 420px;
+    min-height: 420px;
+    max-width: 100%;
+    max-height: calc(100vh - 40px);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.root-profile-panel-card-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.root-profile-panel-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #2f855a;
+}
+
+.root-profile-panel-username {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.root-profile-panel-bio {
+    text-align: center;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+.root-profile-panel-status-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.root-profile-panel-status {
+    font-weight: 600;
+    color: #2f855a;
+}
+
+.root-profile-panel-user-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.root-profile-panel-user-status {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.root-profile-panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 4px;
+    color: #ffffff;
+}
+
+.root-profile-panel-label {
+    font-size: 13px;
+    font-weight: 600;
+    align-self: flex-start;
+    color: #d1d5db;
+}
+
+.root-profile-panel-value {
+    font-size: 13px;
+    color: #d1d5db;
+    align-self: flex-start;
+}
+
+.root-profile-panel-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background: #111827;
+    color: #ffffff;
+}
+
+.root-profile-panel-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.root-profile-panel-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.root-profile-panel-thumb {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #2f855a;
+}
+
+.root-profile-panel-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    align-self: flex-start;
+    margin-top: 6px;
+}
+
+.root-profile-panel-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.root-profile-panel-empty {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.root-profile-panel-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    background: #111111;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.root-profile-panel-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.root-profile-panel-close {
+    margin-top: 4px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    background: #2563eb;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 150ms ease;
+}
+
+.root-profile-panel-close:hover {
+    background: #1d4ed8;
+}
+
+.auth.page,
+.activeService.box {
+    position: relative;
+    overflow: visible;
+}
+
+.logout {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.loginButton {
+    width: 128px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font: 16px "Varela Round", sans-serif;
+    color: #ffffff;
+    background: #000000;
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease;
+}
+
+.loginButton:hover {
+    background: #111111;
+    transform: translateY(-1px);
+}
+
+.root-profile-panel-section {
+    display: block;
+    width: 100%;
+    gap: 12px;
+}
+
+.root-profile-panel-tab-button {
+    flex: 1;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    background: #111111;
+    color: #d1d5db;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.root-profile-panel-tab-button.active,
+.root-profile-panel-tab-button:hover {
+    background: #1f2937;
+    color: #ffffff;
+}
+
+.root-profile-panel-value {
+    font-size: 13px;
+    color: #d1d5db;
+    align-self: flex-start;
+}
